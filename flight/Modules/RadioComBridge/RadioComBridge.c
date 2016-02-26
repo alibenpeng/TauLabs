@@ -303,10 +303,7 @@ static void radioRxTask( __attribute__ ((unused))
 		if (PIOS_COM_RFM22B) {
 			uint8_t serial_data[1];
 			uint16_t bytes_to_process =
-			    PIOS_COM_ReceiveBuffer(PIOS_COM_RFM22B,
-						   serial_data,
-						   sizeof(serial_data),
-						   MAX_PORT_DELAY);
+			    PIOS_COM_ReceiveBuffer(PIOS_COM_RFM22B, serial_data, sizeof(serial_data), MAX_PORT_DELAY);
 			if (bytes_to_process > 0) {
 				if (data->parseUAVTalk) {
 					// Pass the data through the UAVTalk parser.
